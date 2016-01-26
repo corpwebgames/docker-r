@@ -1,7 +1,6 @@
-FROM ubuntu:trusty
+FROM dpatriot/docker-awscli-java8
 
-## This handle reaches Carl and Dirk
-MAINTAINER "Carl Boettiger and Dirk Eddelbuettel" rocker-maintainers@eddelbuettel.com
+MAINTAINER Shago Vyacheslav <v.shago@corpwebgames.com>
 
 ## Set a default user. Available via runtime flag `--user docker` 
 ## Add user to 'staff' group, granting them write privileges to /usr/local/lib/R/site.library
