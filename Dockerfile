@@ -55,8 +55,7 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
 # install required packages
-ADD packages.sh /opt/
-RUN chmod +x /opt/packages.sh 
-RUN ./opt/packages.sh
+COPY packages.sh /opt/packages.sh
+RUN chmod +x /opt/packages.sh && ./opt/packages.sh
 
 CMD ["bash"]
