@@ -59,4 +59,11 @@ COPY packages.sh /opt/packages.sh
 RUN chmod +x /opt/packages.sh
 RUN /opt/packages.sh
 
+# install drivers
+RUN aws s3 cp s3://redshift-downloads/drivers/RedshiftJDBC41-1.1.2.0002.jar /usr/lib/R/lib/ \
+	&& curl -s http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar -o /usr/lib/R/lib/mysql-connector-java.jar
+
+ENV JDBC_PATH /usr/lib/R/lib/mysql-connector-java.jar
+ENV REDSHIFT_JDBC_PATH /usr/lib/R/lib/RedshiftJDBC41-1.1.2.0002.jar
+
 CMD ["bash"]
