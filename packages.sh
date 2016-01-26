@@ -1,7 +1,5 @@
 #!/bin/bash
 
-apt-get update && apt-get install -y libcurl4-openssl-dev apt-get install libxml2-dev libdigest-hmac-perl
-
 R CMD javareconf
 
 R --no-save << EOF
