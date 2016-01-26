@@ -40,7 +40,7 @@ RUN apt-get install -y --no-install-recommends \
         r-cran-stringr \
         libcurl4-openssl-dev \
         libxml2-dev \
-        libdigest-hmac-perl
+        libdigest-hmac-perl \
     && echo 'options(repos = c(CRAN = "https://cran.rstudio.com/"), download.file.method = "wget")' >> /etc/R/Rprofile.site \
 	&& ln -s /usr/lib/R/site-library/littler/examples/install.r /usr/local/bin/install.r \
 	&& ln -s /usr/lib/R/site-library/littler/examples/install2.r /usr/local/bin/install2.r \
