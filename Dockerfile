@@ -52,4 +52,8 @@ RUN apt-get install -y --no-install-recommends \
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
+# install required packages
+ADD packages.sh /opt/
+RUN chmod +x packages.sh && ./opt/packages.sh
+
 CMD ["bash"]
