@@ -60,7 +60,7 @@ RUN chmod +x /opt/packages.sh
 RUN /opt/packages.sh
 
 # install drivers
-RUN curl -s https://s3.amazonaws.com/redshift-downloads/drivers/RedshiftJDBC41-1.1.10.1010.jar -o /usr/lib/R/lib/RedshiftJDBC41-1.1.10.1010.jar
+RUN curl -s https://s3.amazonaws.com/redshift-downloads/drivers/RedshiftJDBC41-1.1.10.1010.jar -o /usr/lib/R/lib/RedshiftJDBC41-1.1.10.1010.jar \
 	&& curl -s http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar -o /usr/lib/R/lib/mysql-connector-java.jar
 
 ENV JDBC_PATH /usr/lib/R/lib/mysql-connector-java.jar
