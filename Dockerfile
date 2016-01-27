@@ -1,4 +1,4 @@
-FROM dpatriot/docker-awscli-java8
+FROM dpatriot/docker-s3-runner:1.3.0
 
 MAINTAINER Shago Vyacheslav <v.shago@corpwebgames.com>
 
@@ -65,5 +65,3 @@ RUN aws s3 cp s3://redshift-downloads/drivers/RedshiftJDBC41-1.1.2.0002.jar /usr
 
 ENV JDBC_PATH /usr/lib/R/lib/mysql-connector-java.jar
 ENV REDSHIFT_JDBC_PATH /usr/lib/R/lib/RedshiftJDBC41-1.1.2.0002.jar
-
-CMD ["bash"]
