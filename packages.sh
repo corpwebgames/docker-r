@@ -7,7 +7,7 @@ install.packages(c('RCurl', 'XML', 'digest', 'RJDBC', 'doParallel', 'foreach', '
 repos="http://cran.rstudio.com", INSTALL_opts=c('--byte-compile') )
 EOF
 
-R --no-save << EOF
-install.packages(c('RAmazonS3'),
-repos="http://www.omegahat.org/R", INSTALL_opts=c('--byte-compile') )
+aws s3 cp s3://webgames-emr/R/lib/RAmazonS3_0.1-5.tar.gz ./Rlib
+sudo R --no-save << EOF
+ install.packages(c('./Rlib/RAmazonS3_0.1-5.tar.gz'),repos=NULL, INSTALL_opts=c('--byte-compile'), Ncpus = 4 )
 EOF
