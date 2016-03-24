@@ -6,7 +6,7 @@ services:
 install:
 - docker build -t local/docker-r .
 script:
-- docker run --rm --entrypoint "/bin/bash" -v $(pwd):/data local/docker-r Rscript /data/test.R
+- docker run --rm --entrypoint "Rscript" -v $(pwd):/data local/docker-r /data/test.R
 notifications:
   slack:
     secure: XV0Zb/6gq5K5V8iZ58DjtzqrQ8kuVMwpsx6eOZ2QWAxOit5ixmQe8X4kuJpnaHx0VlXkq1DlnX/Cx+3OAA/VrudfijurQivBp+jG47vgJ4Rm4JrvzCv2pQazNtpGKZvyiZhgAbO9rLf/oL18NXVvjT4OIMEp6wZKmy6jn4PMhA8IbOu70ueqPN2FkjWqgmBw+Nsc0JeI4KZXkynE7syUe2vDHCKKSoyub1+SLH5rxZodWOTmCw9ow3N2br7Fil4kqvX5ppg1IBaXlDYnK6mAiorJmk9VTkAXVvlyeszI7wDX3goG4wS6khPML0Mrh+Su6ELUGB/ugpWFqRqQegUdymumqEkYMcoBow+M1Y6b0jxRZcxUkNm6qdaRyAs1H6WqEPrUcEIlRgP8L5xp7CMBpEVqzMK0EQtWPZJjrdtAHV3jJHtFYd48FFshH3fb9XPb2CBwU8mQJeRoLJ43LAgL4XQmw6ba3iUHeSukdJZ1FkauU6c54SCmYcuUuhOUnyUfFPrqCF6ctR3juPSXhQs44iMMT9hZVWHiPfciXxxTu+a/In1zRa1Pr0n2I4NG3GvXrPC4CilBgxCKuPtTchOu47ui3T+DJUGiR3bvrULURbta+EEXJiG8UsHIYULHFDATEiqcTb8Aed5Fb3Uo3cfdLoYljC4MdPoM4kmvFPoBj2I=

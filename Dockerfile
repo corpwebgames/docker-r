@@ -56,6 +56,7 @@ ENV LANG en_US.UTF-8
 
 # install required packages
 COPY packages.sh /opt/packages.sh
+COPY RAmazonS3_0.1-5.tar.gz /opt/RAmazonS3_0.1-5.tar.gz
 RUN chmod +x /opt/packages.sh
 RUN /opt/packages.sh
 
